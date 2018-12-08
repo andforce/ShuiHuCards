@@ -846,13 +846,13 @@
             <objects>
                 <collectionViewController id="Iyf-bm-AQn" customClass="ExampleViewController" customModule="ShuiHuCards" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="Cqi-DH-rK3" customClass="HFCardCollectionView" customModule="ShuiHuCards" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="384" height="512"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewLayout key="collectionViewLayout" id="lP0-nf-NOi" customClass="HFCardCollectionViewLayout" customModule="ShuiHuCards" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="CardCell" id="0Dz-b6-jJ7" customClass="ExampleCollectionViewCell" customModule="ShuiHuCards" customModuleProvider="target">
-                                <rect key="frame" x="23" y="0.0" width="338" height="160"/>
+                                <rect key="frame" x="18.5" y="0.0" width="338" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="338" height="160"/>
@@ -947,7 +947,6 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="384" height="512"/>
                     <connections>
                         <outlet property="backgroundNavigationBar" destination="7EW-EX-gPe" id="g10-Fq-kUr"/>
                         <outlet property="backgroundView" destination="mPY-IA-BxV" id="1R0-QE-qcE"/>
