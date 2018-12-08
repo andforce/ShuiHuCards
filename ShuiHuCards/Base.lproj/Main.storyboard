@@ -920,7 +920,6 @@
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="backgroundNavigationBar" destination="7EW-EX-gPe" id="g10-Fq-kUr"/>
                         <outlet property="backgroundView" destination="mPY-IA-BxV" id="1R0-QE-qcE"/>
                         <outlet property="collectionView" destination="Cqi-DH-rK3" id="lk5-8g-Yoa"/>
                     </connections>
@@ -929,46 +928,7 @@
                 <view contentMode="scaleToFill" id="mPY-IA-BxV">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7EW-EX-gPe">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="OS3-Pj-UfN"/>
-                            </constraints>
-                            <items>
-                                <navigationItem title="Example" id="hcc-pX-q6H">
-                                    <barButtonItem key="leftBarButtonItem" title="Back" id="eIP-Qc-opv">
-                                        <connections>
-                                            <action selector="goBackAction" destination="Iyf-bm-AQn" id="wq6-uF-0ZT"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <rightBarButtonItems>
-                                        <barButtonItem systemItem="add" id="dnJ-Af-oQc">
-                                            <connections>
-                                                <action selector="addCardAction" destination="Iyf-bm-AQn" id="JxO-TY-8Bk"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem systemItem="trash" id="d0o-CQ-RAD">
-                                            <connections>
-                                                <action selector="deleteCardAtIndex0orSelected" destination="Iyf-bm-AQn" id="M4i-ub-Bzg"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem systemItem="stop" id="blm-b2-w7n">
-                                            <connections>
-                                                <action selector="collapseAllCardsAction" destination="lP0-nf-NOi" id="Epf-Pl-SIH"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </rightBarButtonItems>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
-                    </subviews>
-                    <color key="backgroundColor" red="0.82901027780000003" green="0.97672123519999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="7EW-EX-gPe" secondAttribute="trailing" id="Ee5-ZE-7RX"/>
-                        <constraint firstItem="7EW-EX-gPe" firstAttribute="leading" secondItem="mPY-IA-BxV" secondAttribute="leading" id="bBr-xD-RIP"/>
-                        <constraint firstItem="7EW-EX-gPe" firstAttribute="topMargin" secondItem="mPY-IA-BxV" secondAttribute="topMargin" constant="8" id="eOC-PO-zO8"/>
-                    </constraints>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <viewLayoutGuide key="safeArea" id="2uw-pl-ueg"/>
                 </view>
                 <view contentMode="scaleToFill" id="EOb-Vo-Vw6">
@@ -1014,7 +974,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="fWH-MY-O41" kind="relationship" relationship="rootViewController" id="YUP-fU-p7P"/>
+                        <segue destination="Iyf-bm-AQn" kind="relationship" relationship="rootViewController" id="mQv-Ms-pSi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Zj-4q-EvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1023,6 +983,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Szl-EL-YD4"/>
+        <segue reference="mQv-Ms-pSi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -139,6 +139,11 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
                 self.cardArray.insert(createCardInfo(), at: index)
             }
         } else {
+
+            self.navigationController?.isNavigationBarHidden = true
+            self.navigationController?.isToolbarHidden = true
+            self.shouldSetupBackgroundView = true
+
             let count = 108//cardLayoutOptions.numberOfCards
             
             for index in 0..<count {
