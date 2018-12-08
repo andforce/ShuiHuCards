@@ -681,9 +681,15 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
     }
     
     private func generateCellSize() -> CGSize {
+        //85.60×53.98
         let width = self.collectionView!.frame.width - (self.contentInset.left + self.contentInset.right)
+
+
         let maxHeight = self.collectionView!.frame.height - (self.bottomCardLookoutMargin * CGFloat(self.bottomNumberOfStackedCards)) - (self.contentInset.top + self.contentInsetBottom) - 2
-        let height = (self.cardMaximumHeight == 0 || self.cardMaximumHeight > maxHeight) ? maxHeight : self.cardMaximumHeight
+        //let height = (self.cardMaximumHeight == 0 || self.cardMaximumHeight > maxHeight) ? maxHeight : self.cardMaximumHeight
+
+        let height = width * 8560 / 5398
+
         let size = CGSize.init(width: width, height: height)
         return size
     }
