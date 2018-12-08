@@ -17,6 +17,10 @@
 		3A2F250F21BACBD100A7DD93 /* HFCardCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F250B21BACBD000A7DD93 /* HFCardCollectionViewLayout.swift */; };
 		3A2F251021BACBD100A7DD93 /* HFCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F250C21BACBD000A7DD93 /* HFCardCollectionView.swift */; };
 		3A2F251121BACBD100A7DD93 /* HFCardCollectionViewLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F250D21BACBD100A7DD93 /* HFCardCollectionViewLayoutDelegate.swift */; };
+		3A2F251321BB756F00A7DD93 /* CardsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F251221BB756F00A7DD93 /* CardsCollectionViewController.swift */; };
+		3A2F252021BB7F7E00A7DD93 /* ExampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F251D21BB7F7E00A7DD93 /* ExampleCollectionViewCell.swift */; };
+		3A2F252121BB7F7E00A7DD93 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F251E21BB7F7E00A7DD93 /* ExampleViewController.swift */; };
+		3A2F252221BB7F7E00A7DD93 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F251F21BB7F7E00A7DD93 /* MenuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		3A2F250B21BACBD000A7DD93 /* HFCardCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HFCardCollectionViewLayout.swift; sourceTree = "<group>"; };
 		3A2F250C21BACBD000A7DD93 /* HFCardCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HFCardCollectionView.swift; sourceTree = "<group>"; };
 		3A2F250D21BACBD100A7DD93 /* HFCardCollectionViewLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HFCardCollectionViewLayoutDelegate.swift; sourceTree = "<group>"; };
+		3A2F251221BB756F00A7DD93 /* CardsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewController.swift; sourceTree = "<group>"; };
+		3A2F251D21BB7F7E00A7DD93 /* ExampleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCollectionViewCell.swift; sourceTree = "<group>"; };
+		3A2F251E21BB7F7E00A7DD93 /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		3A2F251F21BB7F7E00A7DD93 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		3A2F24F421BACABC00A7DD93 /* ShuiHuCards */ = {
 			isa = PBXGroup;
 			children = (
+				3A2F252321BB809A00A7DD93 /* Demo */,
 				3A2F250C21BACBD000A7DD93 /* HFCardCollectionView.swift */,
 				3A2F250A21BACBD000A7DD93 /* HFCardCollectionViewCell.swift */,
 				3A2F250B21BACBD000A7DD93 /* HFCardCollectionViewLayout.swift */,
@@ -75,8 +84,19 @@
 				3A2F250121BACABD00A7DD93 /* LaunchScreen.storyboard */,
 				3A2F250421BACABD00A7DD93 /* Info.plist */,
 				3A2F24FC21BACABC00A7DD93 /* ShuiHuCards.xcdatamodeld */,
+				3A2F251221BB756F00A7DD93 /* CardsCollectionViewController.swift */,
 			);
 			path = ShuiHuCards;
+			sourceTree = "<group>";
+		};
+		3A2F252321BB809A00A7DD93 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				3A2F251F21BB7F7E00A7DD93 /* MenuTableViewController.swift */,
+				3A2F251E21BB7F7E00A7DD93 /* ExampleViewController.swift */,
+				3A2F251D21BB7F7E00A7DD93 /* ExampleCollectionViewCell.swift */,
+			);
+			path = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,11 +172,15 @@
 			files = (
 				3A2F250E21BACBD100A7DD93 /* HFCardCollectionViewCell.swift in Sources */,
 				3A2F24F821BACABC00A7DD93 /* ViewController.swift in Sources */,
+				3A2F252221BB7F7E00A7DD93 /* MenuTableViewController.swift in Sources */,
 				3A2F251121BACBD100A7DD93 /* HFCardCollectionViewLayoutDelegate.swift in Sources */,
 				3A2F24F621BACABC00A7DD93 /* AppDelegate.swift in Sources */,
 				3A2F24FE21BACABC00A7DD93 /* ShuiHuCards.xcdatamodeld in Sources */,
 				3A2F251021BACBD100A7DD93 /* HFCardCollectionView.swift in Sources */,
+				3A2F252021BB7F7E00A7DD93 /* ExampleCollectionViewCell.swift in Sources */,
+				3A2F251321BB756F00A7DD93 /* CardsCollectionViewController.swift in Sources */,
 				3A2F250F21BACBD100A7DD93 /* HFCardCollectionViewLayout.swift in Sources */,
+				3A2F252121BB7F7E00A7DD93 /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
