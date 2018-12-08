@@ -859,7 +859,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuO-lI-rxV">
-                                            <rect key="frame" x="238" y="14" width="80" height="33"/>
+                                            <rect key="frame" x="238" y="-99" width="80" height="259"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <state key="normal" title="Flip Card">
                                                 <color key="titleColor" red="0.99272640479999996" green="0.98591910729999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -887,22 +887,23 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B9P-ML-ZaV">
-                                            <rect key="frame" x="0.0" y="20" width="338" height="120"/>
+                                            <rect key="frame" x="0.0" y="49" width="338" height="111"/>
                                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </tableView>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.43642729920000001" green="0.43642729920000001" blue="0.43642729920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="B9P-ML-ZaV" firstAttribute="centerY" secondItem="0Dz-b6-jJ7" secondAttribute="centerY" id="Br7-X6-RpD"/>
+                                    <constraint firstItem="B9P-ML-ZaV" firstAttribute="bottom" secondItem="MuO-lI-rxV" secondAttribute="bottom" id="53l-jQ-6oy"/>
                                     <constraint firstItem="WWj-ll-sJN" firstAttribute="leading" secondItem="GOL-wz-qjL" secondAttribute="trailing" constant="15" id="Ewa-Kf-Nv1"/>
                                     <constraint firstAttribute="trailing" secondItem="MuO-lI-rxV" secondAttribute="trailing" constant="20" id="Fwp-oh-jE5"/>
-                                    <constraint firstItem="B9P-ML-ZaV" firstAttribute="width" secondItem="0Dz-b6-jJ7" secondAttribute="width" id="HK3-9p-ou6"/>
-                                    <constraint firstItem="B9P-ML-ZaV" firstAttribute="centerX" secondItem="0Dz-b6-jJ7" secondAttribute="centerX" id="Hx5-Ge-Ceq"/>
-                                    <constraint firstItem="B9P-ML-ZaV" firstAttribute="top" secondItem="GOL-wz-qjL" secondAttribute="top" id="NK7-r2-W7M"/>
                                     <constraint firstItem="GOL-wz-qjL" firstAttribute="top" secondItem="WWj-ll-sJN" secondAttribute="top" id="Xfl-ec-UYq"/>
+                                    <constraint firstItem="B9P-ML-ZaV" firstAttribute="firstBaseline" secondItem="MuO-lI-rxV" secondAttribute="baseline" constant="12.5" symbolType="layoutAnchor" id="YlC-5a-fbv"/>
+                                    <constraint firstAttribute="bottom" secondItem="B9P-ML-ZaV" secondAttribute="bottom" id="Yy0-x5-pI4"/>
                                     <constraint firstItem="GOL-wz-qjL" firstAttribute="top" secondItem="0Dz-b6-jJ7" secondAttribute="top" constant="20" id="Z38-ME-C24"/>
                                     <constraint firstItem="MuO-lI-rxV" firstAttribute="centerY" secondItem="WWj-ll-sJN" secondAttribute="centerY" id="Zfb-SY-fSs"/>
+                                    <constraint firstItem="B9P-ML-ZaV" firstAttribute="width" secondItem="0Dz-b6-jJ7" secondAttribute="width" id="evp-Y9-N5P"/>
+                                    <constraint firstItem="B9P-ML-ZaV" firstAttribute="centerX" secondItem="0Dz-b6-jJ7" secondAttribute="centerX" id="fbX-C5-Bob"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WWj-ll-sJN" secondAttribute="trailing" symbolic="YES" id="jf7-Sp-JKx"/>
                                     <constraint firstItem="GOL-wz-qjL" firstAttribute="leading" secondItem="0Dz-b6-jJ7" secondAttribute="leadingMargin" constant="-1" id="liB-xe-yKG"/>
                                     <constraint firstItem="MuO-lI-rxV" firstAttribute="leading" secondItem="WWj-ll-sJN" secondAttribute="trailing" constant="87.5" id="v1P-Wr-ngj"/>
