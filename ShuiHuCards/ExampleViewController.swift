@@ -55,20 +55,33 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! ExampleCollectionViewCell
         cell.backgroundColor = self.cardArray[indexPath.item].color
-        //cell.imageIcon?.image = self.cardArray[indexPath.item].icon
 
-        cell.imageIcon?.image = ImageLoader.frontImages[indexPath.item]
+        let url = URL(string: ImageLoader.frontImagePaths[indexPath.item])
+        cell.imageIcon?.kf.setImage(with: url)
+        
+        let reverseUrl = URL(string: ImageLoader.reverseImagePaths[indexPath.item])
+        cell.shuihuBackImageView?.kf.setImage(with: reverseUrl)
 
-        NSLog(ImageLoader.reverseImagePaths[indexPath.item])
-
-        cell.shuihuBackImageView?.image = ImageLoader.reverseImages[indexPath.item]
         cell.item = indexPath.item
 
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.cardCollectionViewLayout?.revealCardAt(index: indexPath.item)
+        //self.cardCollectionViewLayout?.revealCardAt(index: indexPath.item)
+        self.cardCollectionViewLayout?.revealCardAt(index: indexPath.item, completion: {
+            /*
+            let revealCell:UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
+            let frame:CGRect = revealCell.contentView.frame
+            let newFrame:CGRect = CGRect.init(x: frame.origin.x, y: frame.origin.y + frame.height, width: frame.width, height: 100)
+            
+            
+            let childView: UIView = UIView.init(frame: newFrame)
+            childView.backgroundColor = UIColor.red
+            
+            self.collectionView.addSubview(childView)
+             */
+        })
     }
     
     override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {

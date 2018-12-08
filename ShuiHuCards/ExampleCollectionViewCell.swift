@@ -10,8 +10,6 @@ import UIKit
 import QuartzCore
 import Kingfisher
 
-//import HFCardCollectionViewLayout
-
 class ExampleCollectionViewCell: HFCardCollectionViewCell {
     
     var cardCollectionViewLayout: HFCardCollectionViewLayout?
@@ -44,12 +42,13 @@ class ExampleCollectionViewCell: HFCardCollectionViewCell {
         self.buttonFlip?.isHidden = !isRevealed
         self.tableView?.scrollsToTop = isRevealed
     }
-    
+
     @IBAction func buttonFlipAction() {
         if let backView = self.backView {
-            
-            self.shuihuBackImageView?.image = ImageLoader.reverseImages[item!]
-            
+
+            let reverseUrl = URL(string: ImageLoader.reverseImagePaths[item!])
+            self.shuihuBackImageView?.kf.setImage(with: reverseUrl)
+
             // Same Corner radius like the contentview of the HFCardCollectionViewCell
             backView.layer.cornerRadius = self.cornerRadius
             backView.layer.masksToBounds = true
