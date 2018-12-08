@@ -29,7 +29,7 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
     override func viewDidLoad() {
         self.setupExample()
         super.viewDidLoad()
-        self.collectionView.contentInset = UIEdgeInsets.init(top: 0, left: 16, bottom: 0, right: 16)
+        self.collectionView.contentInset = UIEdgeInsets.init(top: 16, left: 16, bottom: 0, right: 16)
     }
     
     // MARK: CollectionView
@@ -133,6 +133,12 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
             self.cardCollectionViewLayout?.bottomStackedCardsMinimumScale = cardLayoutOptions.bottomStackedCardsMinimumScale
             self.cardCollectionViewLayout?.bottomStackedCardsMaximumScale = cardLayoutOptions.bottomStackedCardsMaximumScale
             
+            let count = 108//cardLayoutOptions.numberOfCards
+            
+            for index in 0..<count {
+                self.cardArray.insert(createCardInfo(), at: index)
+            }
+        } else {
             let count = 108//cardLayoutOptions.numberOfCards
             
             for index in 0..<count {
