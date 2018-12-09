@@ -31,16 +31,47 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
     }
     
     // MARK: CollectionView
-    
-    func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, willRevealCardAtIndex index: Int) {
+    func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, didRevealCardAtIndex index: Int) {
+
         if let cell = self.collectionView?.cellForItem(at: IndexPath(item: index, section: 0)) as? WaterMarginFrontCell {
+
+            self.backgroundView?.alpha = 1.0
+
+            let actionRootView = self.backgroundView?.actionRootView
+
+            let currentFrame = actionRootView?.frame
+
+            let achorViewFrame:CGRect = cell.contentView.frame
+
+            let newFrame = CGRect.init(x: (currentFrame?.origin.x)!,
+                    y: achorViewFrame.origin.y + achorViewFrame.height + 44 + self.collectionView.contentInset.top * 2,
+                    width: (currentFrame?.width)!, height: (currentFrame?.height)!)
+
+            actionRootView?.frame = newFrame
+
+        }
+    }
+
+    func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, didUnrevealCardAtIndex index: Int) {
+
+    }
+
+    func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, willRevealCardAtIndex index: Int) {
+
+        if let cell = self.collectionView?.cellForItem(at: IndexPath(item: index, section: 0)) as? WaterMarginFrontCell {
+
             cell.cardCollectionViewLayout = self.cardCollectionViewLayout
             cell.setCardRevealed(true)
+
+            let reverseUrl = URL(string: ImageLoader.reverseImagePaths[index])
+            cell.shuihuBackImageView?.kf.setImage(with: reverseUrl)
         }
     }
     
     func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, willUnrevealCardAtIndex index: Int) {
         if let cell = self.collectionView?.cellForItem(at: IndexPath(item: index, section: 0)) as? WaterMarginFrontCell {
+            self.backgroundView?.alpha = 0
+
             cell.cardCollectionViewLayout = self.cardCollectionViewLayout
             cell.setCardRevealed(false)
         }
@@ -77,30 +108,7 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let revealCell:WaterMarginFrontCell = collectionView.cellForItem(at: indexPath)! as! WaterMarginFrontCell
-
-        let reverseUrl = URL(string: ImageLoader.reverseImagePaths[indexPath.item])
-        revealCell.shuihuBackImageView?.kf.setImage(with: reverseUrl)
-
-        //self.cardCollectionViewLayout?.revealCardAt(index: indexPath.item)
-        self.cardCollectionViewLayout?.revealCardAt(index: indexPath.item, completion: {
-            
-
-            let backgroundViewFrame = self.backgroundView?.actionRootView?.frame
-            print("before", backgroundViewFrame)
-
-
-            let frame:CGRect = revealCell.contentView.frame
-
-            let newFrame = CGRect.init(x: (backgroundViewFrame?.origin.x)!, y: frame.origin.y + frame.height + 44 + self.collectionView.contentInset.top * 2, width: (backgroundViewFrame?.width)!, height: (backgroundViewFrame?.height)!)
-            //backgroundViewFrame?.origin.y = frame.origin.y + frame.height + 20
-
-            self.backgroundView?.actionRootView?.frame = newFrame
-
-            let backgroundViewFrame1 = self.backgroundView?.actionRootView?.frame
-            print("after" ,backgroundViewFrame1)
-
-        })
+        self.cardCollectionViewLayout?.revealCardAt(index: indexPath.item)
     }
     
     override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
