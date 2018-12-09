@@ -10,7 +10,6 @@ import UIKit
 
 struct CardInfo {
     var color: UIColor
-    var icon: UIImage
 }
 
 class ExampleViewController : UICollectionViewController, HFCardCollectionViewLayoutDelegate {
@@ -172,9 +171,7 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
     }
     
     private func createCardInfo() -> CardInfo {
-        let icons: [UIImage] = [#imageLiteral(resourceName: "Icon1.pdf"), #imageLiteral(resourceName: "Icon2.pdf"), #imageLiteral(resourceName: "Icon3.pdf"), #imageLiteral(resourceName: "Icon4.pdf"), #imageLiteral(resourceName: "Icon5.pdf"), #imageLiteral(resourceName: "Icon6.pdf")]
-        let icon = icons[Int(arc4random_uniform(6))]
-        let newItem = CardInfo(color: self.getRandomColor(), icon: icon)
+        let newItem = CardInfo(color: self.getRandomColor())
         return newItem
     }
     
