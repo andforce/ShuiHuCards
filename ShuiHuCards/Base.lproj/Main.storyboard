@@ -448,7 +448,7 @@
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bottomCardLookoutMargin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gJ7-zt-5Br">
-                                                    <rect key="frame" x="8" y="11.5" width="271" height="21"/>
+                                                    <rect key="frame" x="16" y="11.5" width="263" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="C73-Ke-D7i"/>
                                                     </constraints>
@@ -925,11 +925,44 @@
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aat-au-BNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="mPY-IA-BxV">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                <view contentMode="scaleToFill" id="mPY-IA-BxV" customClass="BackGroundActionUIView" customModule="ShuiHuCards" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="307" height="640"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oc3-cE-1Va">
+                            <rect key="frame" x="0.0" y="458" width="307" height="127"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94F-yi-gRu">
+                                    <rect key="frame" x="239" y="48" width="60" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="介绍">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbT-qq-kGw">
+                                    <rect key="frame" x="8" y="53" width="179" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="127" id="C9D-M9-z0u"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Oc3-cE-1Va" firstAttribute="width" secondItem="mPY-IA-BxV" secondAttribute="width" id="BXe-8g-JPm"/>
+                        <constraint firstItem="Oc3-cE-1Va" firstAttribute="top" secondItem="2uw-pl-ueg" secondAttribute="top" constant="438" id="dc0-J7-Boy"/>
+                        <constraint firstItem="Oc3-cE-1Va" firstAttribute="centerX" secondItem="2uw-pl-ueg" secondAttribute="centerX" id="nNs-gS-5zk"/>
+                    </constraints>
                     <viewLayoutGuide key="safeArea" id="2uw-pl-ueg"/>
+                    <connections>
+                        <outlet property="actionRootView" destination="Oc3-cE-1Va" id="oQ0-5o-bl3"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="EOb-Vo-Vw6">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>

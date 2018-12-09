@@ -40,5 +40,6 @@ import UIKit
     /// - Parameter collectionViewLayout: The current HFCardCollectionViewLayout.
     /// - Parameter didUnrevealedCardAtIndex: Index of the card.
     @objc optional func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, didUnrevealCardAtIndex index: Int)
-    
+
+    @objc optional func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, touchMove yDistance: CGFloat)
 }

@@ -685,7 +685,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
         let width = self.collectionView!.frame.width - (self.contentInset.left + self.contentInset.right)
 
 
-        let maxHeight = self.collectionView!.frame.height - (self.bottomCardLookoutMargin * CGFloat(self.bottomNumberOfStackedCards)) - (self.contentInset.top + self.contentInsetBottom) - 2
+        //let maxHeight = self.collectionView!.frame.height - (self.bottomCardLookoutMargin * CGFloat(self.bottomNumberOfStackedCards)) - (self.contentInset.top + self.contentInsetBottom) - 2
         //let height = (self.cardMaximumHeight == 0 || self.cardMaximumHeight > maxHeight) ? maxHeight : self.cardMaximumHeight
 
         let height = width * 8560 / 5398
@@ -898,15 +898,17 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
             self.revealedCardCell = nil
         }
     }
-    
+
     @objc internal func revealedCardPanGestureHandler() {
         if self.collectionViewItemCount == 1 || self.revealedCardIsFlipped == true {
             return
         }
         if let revealedCardPanGestureRecognizer = self.revealedCardPanGestureRecognizer, self.revealedCardCell != nil {
             let gestureTouchLocation = revealedCardPanGestureRecognizer.location(in: self.collectionView)
-            let shiftY: CGFloat = (gestureTouchLocation.y - self.revealedCardPanGestureTouchLocationY  > 0) ? gestureTouchLocation.y - self.revealedCardPanGestureTouchLocationY : 0
-            
+            let shiftY: CGFloat = (gestureTouchLocation.y - self.revealedCardPanGestureTouchLocationY > 0) ? gestureTouchLocation.y - self.revealedCardPanGestureTouchLocationY : 0
+
+            let collectionViewLayoutDelegate = self.collectionView?.delegate as? HFCardCollectionViewLayoutDelegate
+            collectionViewLayoutDelegate?.cardCollectionViewLayout?(self, touchMove: shiftY)
             switch revealedCardPanGestureRecognizer.state {
             case .began:
                 UIApplication.shared.keyWindow?.endEditing(true)
@@ -914,7 +916,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
             case .changed:
                 let scaleTarget = self.calculateCardScale(forIndex: self.cardCollectionBottomCardsRevealedIndex, scaleBehindCard: true)
                 let scaleDiff: CGFloat = 1.0 - scaleTarget
-                let scale: CGFloat = 1.0 - min(((shiftY * scaleDiff) / (self.collectionView!.frame.height / 2)) , scaleDiff)
+                let scale: CGFloat = 1.0 - min(((shiftY * scaleDiff) / (self.collectionView!.frame.height / 2)), scaleDiff)
                 let transformY = CGAffineTransform.init(translationX: 0, y: shiftY)
                 let transformScale = CGAffineTransform.init(scaleX: scale, y: scale)
                 self.revealedCardCell?.transform = transformY.concatenating(transformScale)
@@ -922,10 +924,10 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
                 let isNeedReload = (shiftY > self.revealedCardCell!.frame.height / 7) ? true : false
                 let resetY = (isNeedReload) ? self.collectionView!.frame.height : 0
                 let scale: CGFloat = (isNeedReload) ? self.calculateCardScale(forIndex: self.cardCollectionBottomCardsRevealedIndex, scaleBehindCard: true) : 1.0
-                
+
                 let transformScale = CGAffineTransform.init(scaleX: scale, y: scale)
                 let transformY = CGAffineTransform.init(translationX: 0, y: resetY * (1.0 + (1.0 - scale)))
-                
+
                 UIView.animate(withDuration: 0.3, animations: {
                     self.revealedCardCell?.transform = transformY.concatenating(transformScale)
                 }, completion: { (finished) in

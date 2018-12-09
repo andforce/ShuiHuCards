@@ -24,6 +24,7 @@
 		3A5E08BA21BBFD770027A74D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5E08B921BBFD770027A74D /* Kingfisher.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		3A5E08BE21BC148B0027A74D /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E08BD21BC148B0027A74D /* ImageLoader.swift */; };
 		3A7D6CC321BD2B4000ED05AA /* Kingfisher.framework in Enbed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5E08B921BBFD770027A74D /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3A7D6CC721BD5A8A00ED05AA /* BackGroundActionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D6CC621BD5A8A00ED05AA /* BackGroundActionUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +60,7 @@
 		3A2F251F21BB7F7E00A7DD93 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		3A5E08B921BBFD770027A74D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		3A5E08BD21BC148B0027A74D /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		3A7D6CC621BD5A8A00ED05AA /* BackGroundActionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundActionUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				3A2F24FC21BACABC00A7DD93 /* ShuiHuCards.xcdatamodeld */,
 				3A2F251221BB756F00A7DD93 /* CardsCollectionViewController.swift */,
 				3A5E08BD21BC148B0027A74D /* ImageLoader.swift */,
+				3A7D6CC621BD5A8A00ED05AA /* BackGroundActionUIView.swift */,
 			);
 			path = ShuiHuCards;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				3A2F24FE21BACABC00A7DD93 /* ShuiHuCards.xcdatamodeld in Sources */,
 				3A2F251021BACBD100A7DD93 /* HFCardCollectionView.swift in Sources */,
 				3A2F252021BB7F7E00A7DD93 /* WaterMarginFrontCell.swift in Sources */,
+				3A7D6CC721BD5A8A00ED05AA /* BackGroundActionUIView.swift in Sources */,
 				3A2F251321BB756F00A7DD93 /* CardsCollectionViewController.swift in Sources */,
 				3A2F250F21BACBD100A7DD93 /* HFCardCollectionViewLayout.swift in Sources */,
 				3A2F252121BB7F7E00A7DD93 /* MainController.swift in Sources */,

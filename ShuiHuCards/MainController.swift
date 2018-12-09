@@ -16,11 +16,11 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
     
     var cardCollectionViewLayout: HFCardCollectionViewLayout?
     
-    @IBOutlet var backgroundView: UIView?
+    @IBOutlet var backgroundView: BackGroundActionUIView?
     @IBOutlet var backgroundNavigationBar: UINavigationBar?
     
     var cardLayoutOptions: CardLayoutSetupOptions?
-    var shouldSetupBackgroundView = false
+    var shouldSetupBackgroundView = true
     
     var cardArray: [CardInfo] = []
     
@@ -44,6 +44,17 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
             cell.cardCollectionViewLayout = self.cardCollectionViewLayout
             cell.setCardRevealed(false)
         }
+    }
+
+    func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, touchMove yDistance: CGFloat) {
+        print("cardCollectionViewLayout touchMove : ", yDistance)
+
+        if yDistance > 50 {
+            backgroundView?.alpha = 0
+            return
+        }
+        backgroundView?.alpha = 1.0 - (yDistance / 50.0)
+
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
