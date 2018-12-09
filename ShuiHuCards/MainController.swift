@@ -86,16 +86,20 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
         self.cardCollectionViewLayout?.revealCardAt(index: indexPath.item, completion: {
             
 
-            /*
+            let backgroundViewFrame = self.backgroundView?.actionRootView?.frame
+            print("before", backgroundViewFrame)
+
+
             let frame:CGRect = revealCell.contentView.frame
-            let newFrame:CGRect = CGRect.init(x: frame.origin.x, y: frame.origin.y + frame.height, width: frame.width, height: 100)
-            
-            
-            let childView: UIView = UIView.init(frame: newFrame)
-            childView.backgroundColor = UIColor.red
-            
-            self.collectionView.addSubview(childView)
-            */
+
+            let newFrame = CGRect.init(x: (backgroundViewFrame?.origin.x)!, y: frame.origin.y + frame.height + 44 + self.collectionView.contentInset.top * 2, width: (backgroundViewFrame?.width)!, height: (backgroundViewFrame?.height)!)
+            //backgroundViewFrame?.origin.y = frame.origin.y + frame.height + 20
+
+            self.backgroundView?.actionRootView?.frame = newFrame
+
+            let backgroundViewFrame1 = self.backgroundView?.actionRootView?.frame
+            print("after" ,backgroundViewFrame1)
+
         })
     }
     
