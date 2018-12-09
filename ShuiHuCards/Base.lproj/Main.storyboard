@@ -858,17 +858,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="338" height="346"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuO-lI-rxV">
-                                            <rect key="frame" x="249" y="22" width="69" height="33"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <state key="normal" title="Flip Card">
-                                                <color key="titleColor" red="0.99272640479999996" green="0.98591910729999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="buttonFlipAction" destination="0Dz-b6-jJ7" eventType="touchUpInside" id="s0L-V1-Eye"/>
-                                            </connections>
-                                        </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GOL-wz-qjL">
                                             <rect key="frame" x="0.0" y="0.0" width="338" height="346"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -877,10 +866,7 @@
                                 </view>
                                 <color key="backgroundColor" red="0.43642729920000001" green="0.43642729920000001" blue="0.43642729920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="MuO-lI-rxV" firstAttribute="top" secondItem="0Dz-b6-jJ7" secondAttribute="topMargin" constant="-6" id="5bA-JB-5k4"/>
                                     <constraint firstItem="GOL-wz-qjL" firstAttribute="centerY" secondItem="0Dz-b6-jJ7" secondAttribute="centerY" id="Ex1-HN-LOC"/>
-                                    <constraint firstAttribute="trailing" secondItem="MuO-lI-rxV" secondAttribute="trailing" constant="20" id="Fwp-oh-jE5"/>
-                                    <constraint firstItem="MuO-lI-rxV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Dz-b6-jJ7" secondAttribute="leading" symbolic="YES" id="NLr-s4-nMq"/>
                                     <constraint firstItem="GOL-wz-qjL" firstAttribute="width" secondItem="0Dz-b6-jJ7" secondAttribute="width" id="Njj-9E-qiw"/>
                                     <constraint firstItem="GOL-wz-qjL" firstAttribute="centerX" secondItem="0Dz-b6-jJ7" secondAttribute="centerX" id="jlX-0W-8L7"/>
                                     <constraint firstItem="GOL-wz-qjL" firstAttribute="height" secondItem="0Dz-b6-jJ7" secondAttribute="height" id="qwR-oW-FRm"/>
@@ -888,8 +874,6 @@
                                 <size key="customSize" width="338" height="346"/>
                                 <connections>
                                     <outlet property="backView" destination="EOb-Vo-Vw6" id="8kQ-EZ-vHd"/>
-                                    <outlet property="buttonFlip" destination="MuO-lI-rxV" id="32G-1q-bLR"/>
-                                    <outlet property="buttonFlipBack" destination="gd6-c6-Qh2" id="OxQ-Xr-lui"/>
                                     <outlet property="imageIcon" destination="GOL-wz-qjL" id="F8N-e3-1aa"/>
                                     <outlet property="shuihuBackImageView" destination="Mpb-T6-FpJ" id="p21-dv-Tt3"/>
                                 </connections>
@@ -1008,25 +992,11 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mpb-T6-FpJ">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gd6-c6-Qh2">
-                            <rect key="frame" x="123" y="20" width="74" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="84G-PL-hxT"/>
-                                <constraint firstAttribute="height" constant="30" id="dfo-uK-93W"/>
-                            </constraints>
-                            <color key="tintColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" title="Flip Back"/>
-                            <connections>
-                                <action selector="flipBackRevealedCardAction" destination="lP0-nf-NOi" eventType="touchUpInside" id="8Pr-5g-J3M"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.46443669069999999" green="0.53947243020000002" blue="0.71800113340000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="Mpb-T6-FpJ" firstAttribute="centerX" secondItem="vge-Mg-1pw" secondAttribute="centerX" id="DVd-da-BOU"/>
                         <constraint firstItem="Mpb-T6-FpJ" firstAttribute="width" secondItem="EOb-Vo-Vw6" secondAttribute="width" id="GCu-B8-zcP"/>
-                        <constraint firstItem="gd6-c6-Qh2" firstAttribute="top" secondItem="EOb-Vo-Vw6" secondAttribute="top" constant="20" id="VGV-DA-rql"/>
-                        <constraint firstItem="gd6-c6-Qh2" firstAttribute="centerX" secondItem="EOb-Vo-Vw6" secondAttribute="centerX" id="aly-D4-Xal"/>
                         <constraint firstItem="Mpb-T6-FpJ" firstAttribute="height" secondItem="EOb-Vo-Vw6" secondAttribute="height" id="gYt-CF-n2z"/>
                         <constraint firstItem="Mpb-T6-FpJ" firstAttribute="centerY" secondItem="vge-Mg-1pw" secondAttribute="centerY" id="qLM-76-iEq"/>
                     </constraints>
