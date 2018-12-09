@@ -16,6 +16,8 @@ class WaterMarginFrontCell: HFCardCollectionViewCell {
     
     var item: Int?
 
+    var name:String?
+
     @IBOutlet var buttonFlip: UIButton?
     @IBOutlet var tableView: UITableView?
     @IBOutlet var labelText: UILabel?

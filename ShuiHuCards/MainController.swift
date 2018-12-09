@@ -78,6 +78,12 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
 
         if let cell = self.collectionView?.cellForItem(at: IndexPath(item: index, section: 0)) as? WaterMarginFrontCell {
 
+
+            let array : Array = cell.name!.components(separatedBy: " ")
+
+            self.backgroundView?.starLabel.text = array[0]
+            self.backgroundView?.nameLabel.text = array[1]
+
             cell.cardCollectionViewLayout = self.cardCollectionViewLayout
             cell.setCardRevealed(true)
 
@@ -121,6 +127,8 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
         cell.shuihuBackImageView?.kf.setImage(with: reverseUrl)
 
         cell.item = indexPath.item
+
+        cell.name = ImageLoader.names[indexPath.item]
 
         return cell
     }

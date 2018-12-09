@@ -10,6 +10,8 @@ import UIKit
 
 class BackGroundActionUIView: UIView {
 
+    @IBOutlet var starLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
     @IBOutlet var actionRootView: UIView!
     /*
     // Only override draw() if you perform custom drawing.
