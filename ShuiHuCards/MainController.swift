@@ -16,6 +16,10 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
     
     var cardCollectionViewLayout: HFCardCollectionViewLayout?
     
+    var revealCell:WaterMarginFrontCell?
+
+    var frontShowed:Bool? = true
+    
     @IBOutlet var backgroundView: BackGroundActionUIView?
     @IBOutlet var backgroundNavigationBar: UINavigationBar?
     
@@ -29,11 +33,25 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
         super.viewDidLoad()
         self.collectionView.contentInset = UIEdgeInsets.init(top: 16, left: 16, bottom: 0, right: 16)
     }
+
+
+    @IBAction func showBackground(_ sender: UIButton) {
+        if frontShowed! {
+            self.revealCell?.buttonFlipAction()
+
+            frontShowed = false;
+        } else {
+            self.cardCollectionViewLayout?.flipBackRevealedCardAction()
+            frontShowed = true;
+        }
+    }
     
     // MARK: CollectionView
     func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, didRevealCardAtIndex index: Int) {
 
         if let cell = self.collectionView?.cellForItem(at: IndexPath(item: index, section: 0)) as? WaterMarginFrontCell {
+
+            self.revealCell = cell
 
             self.backgroundView?.alpha = 1.0
 
@@ -53,7 +71,7 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
     }
 
     func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, didUnrevealCardAtIndex index: Int) {
-
+        frontShowed = true;
     }
 
     func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, willRevealCardAtIndex index: Int) {

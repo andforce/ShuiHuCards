@@ -941,6 +941,9 @@
                                     <state key="normal" title="介绍">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
+                                    <connections>
+                                        <action selector="showBackground:" destination="Iyf-bm-AQn" eventType="touchUpInside" id="907-rx-cwm"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbT-qq-kGw">
                                     <rect key="frame" x="32" y="0.0" width="183" height="30"/>
