@@ -71,11 +71,12 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
 
         let reverseUrl = URL(string: ImageLoader.reverseImagePaths[indexPath.item])
         revealCell.shuihuBackImageView?.kf.setImage(with: reverseUrl)
-        
+
         //self.cardCollectionViewLayout?.revealCardAt(index: indexPath.item)
         self.cardCollectionViewLayout?.revealCardAt(index: indexPath.item, completion: {
             
 
+            /*
             let frame:CGRect = revealCell.contentView.frame
             let newFrame:CGRect = CGRect.init(x: frame.origin.x, y: frame.origin.y + frame.height, width: frame.width, height: 100)
             
@@ -84,7 +85,7 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
             childView.backgroundColor = UIColor.red
             
             self.collectionView.addSubview(childView)
-            
+            */
         })
     }
     
