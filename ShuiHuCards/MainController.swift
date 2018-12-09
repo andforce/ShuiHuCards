@@ -36,14 +36,14 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
     func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, willRevealCardAtIndex index: Int) {
         if let cell = self.collectionView?.cellForItem(at: IndexPath(item: index, section: 0)) as? WaterMarginFrontCell {
             cell.cardCollectionViewLayout = self.cardCollectionViewLayout
-            cell.cardIsRevealed(true)
+            cell.setCardRevealed(true)
         }
     }
     
     func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, willUnrevealCardAtIndex index: Int) {
         if let cell = self.collectionView?.cellForItem(at: IndexPath(item: index, section: 0)) as? WaterMarginFrontCell {
             cell.cardCollectionViewLayout = self.cardCollectionViewLayout
-            cell.cardIsRevealed(false)
+            cell.setCardRevealed(false)
         }
     }
     
@@ -67,10 +67,15 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let revealCell:WaterMarginFrontCell = collectionView.cellForItem(at: indexPath)! as! WaterMarginFrontCell
+
+        let reverseUrl = URL(string: ImageLoader.reverseImagePaths[indexPath.item])
+        revealCell.shuihuBackImageView?.kf.setImage(with: reverseUrl)
+        
         //self.cardCollectionViewLayout?.revealCardAt(index: indexPath.item)
         self.cardCollectionViewLayout?.revealCardAt(index: indexPath.item, completion: {
-            /*
-            let revealCell:UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
+            
+
             let frame:CGRect = revealCell.contentView.frame
             let newFrame:CGRect = CGRect.init(x: frame.origin.x, y: frame.origin.y + frame.height, width: frame.width, height: 100)
             
@@ -79,7 +84,7 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
             childView.backgroundColor = UIColor.red
             
             self.collectionView.addSubview(childView)
-             */
+            
         })
     }
     

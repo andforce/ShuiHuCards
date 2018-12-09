@@ -38,16 +38,13 @@ class WaterMarginFrontCell: HFCardCollectionViewCell {
         self.tableView?.reloadData()
     }
     
-    func cardIsRevealed(_ isRevealed: Bool) {
+    func setCardRevealed(_ isRevealed: Bool) {
         self.buttonFlip?.isHidden = !isRevealed
         self.tableView?.scrollsToTop = isRevealed
     }
 
     @IBAction func buttonFlipAction() {
         if let backView = self.backView {
-
-            let reverseUrl = URL(string: ImageLoader.reverseImagePaths[item!])
-            self.shuihuBackImageView?.kf.setImage(with: reverseUrl)
 
             // Same Corner radius like the contentview of the HFCardCollectionViewCell
             backView.layer.cornerRadius = self.cornerRadius
@@ -56,8 +53,6 @@ class WaterMarginFrontCell: HFCardCollectionViewCell {
             self.cardCollectionViewLayout?.flipRevealedCard(toView: backView)
         }
     }
-    
-    
 }
 
 extension WaterMarginFrontCell : UITableViewDelegate, UITableViewDataSource {
