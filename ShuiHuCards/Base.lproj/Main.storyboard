@@ -851,7 +851,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewLayout key="collectionViewLayout" id="lP0-nf-NOi" customClass="HFCardCollectionViewLayout" customModule="ShuiHuCards" customModuleProvider="target"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="0Dz-b6-jJ7" customClass="ExampleCollectionViewCell" customModule="ShuiHuCards" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="0Dz-b6-jJ7" customClass="WaterMarginFrontCell" customModule="ShuiHuCards" customModuleProvider="target">
                                 <rect key="frame" x="18.5" y="0.0" width="338" height="346"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

@@ -1,5 +1,5 @@
 //
-//  ExampleViewController.swift
+//  MainController.swift
 //  HFCardCollectionViewLayoutExample
 //
 //  Created by Hendrik Frahmann on 28.10.16.
@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import HFCardCollectionViewLayout
 
 struct CardInfo {
     var color: UIColor
@@ -35,14 +34,14 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
     // MARK: CollectionView
     
     func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, willRevealCardAtIndex index: Int) {
-        if let cell = self.collectionView?.cellForItem(at: IndexPath(item: index, section: 0)) as? ExampleCollectionViewCell {
+        if let cell = self.collectionView?.cellForItem(at: IndexPath(item: index, section: 0)) as? WaterMarginFrontCell {
             cell.cardCollectionViewLayout = self.cardCollectionViewLayout
             cell.cardIsRevealed(true)
         }
     }
     
     func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, willUnrevealCardAtIndex index: Int) {
-        if let cell = self.collectionView?.cellForItem(at: IndexPath(item: index, section: 0)) as? ExampleCollectionViewCell {
+        if let cell = self.collectionView?.cellForItem(at: IndexPath(item: index, section: 0)) as? WaterMarginFrontCell {
             cell.cardCollectionViewLayout = self.cardCollectionViewLayout
             cell.cardIsRevealed(false)
         }
@@ -53,7 +52,7 @@ class ExampleViewController : UICollectionViewController, HFCardCollectionViewLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! ExampleCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! WaterMarginFrontCell
         cell.backgroundColor = self.cardArray[indexPath.item].color
 
         let url = URL(string: ImageLoader.frontImagePaths[indexPath.item])

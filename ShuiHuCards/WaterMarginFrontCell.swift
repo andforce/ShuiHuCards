@@ -1,5 +1,5 @@
 //
-//  ExampleCollectionViewCell.swift
+//  WaterMarginFrontCell.swift
 //  HFCardCollectionViewLayoutExample
 //
 //  Created by Hendrik Frahmann on 02.11.16.
@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 import Kingfisher
 
-class ExampleCollectionViewCell: HFCardCollectionViewCell {
+class WaterMarginFrontCell: HFCardCollectionViewCell {
     
     var cardCollectionViewLayout: HFCardCollectionViewLayout?
     
@@ -60,7 +60,7 @@ class ExampleCollectionViewCell: HFCardCollectionViewCell {
     
 }
 
-extension ExampleCollectionViewCell : UITableViewDelegate, UITableViewDataSource {
+extension WaterMarginFrontCell : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
